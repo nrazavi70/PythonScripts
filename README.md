@@ -26,10 +26,11 @@ You only need python3 on the server you are installing this.
 
 There are three simple steps to install this.  
   
-  1. Clone the repo :
+  1. Clone the repo and switch to ```SimpleURLWatchdog``` branch :
    ```
-   git clone ...
-   cd SimpleURLWatchdog
+   git clone git@github.com:nrazavi70/PythonScripts.git
+   cd PythonScripts
+   git checkout SimpleURLWatchdog
    ```
   2. Edit ``` watchdog.sh ``` and fill your data in front of the empty environmental variables.
    ```
