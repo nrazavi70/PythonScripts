@@ -1,0 +1,15 @@
+[Unit]
+Description=Watches a URL and switches dns records on failure.
+
+[Service]
+ExecStart=/bin/bash /etc/watchdog/watchdog.sh
+User= root
+Group= root
+Type=simple
+Restart=on-failure
+RestartSec=300
+StandardOutput=append:/var/log/watchdog/output.log
+StandardError=append:/var/log/watchdog/error.log
+
+[Install]
+WantedBy=multi-user.target
