@@ -24,7 +24,7 @@ You only need python3 on the server you are installing this.
 
 ### Installing
 
-There are three simple steps to install this.  
+There are five simple steps to install this.  
   
   1. Clone the repo and switch to ```SimpleURLWatchdog``` branch :
    ```
@@ -56,7 +56,7 @@ There are three simple steps to install this.
   chmod +x ./watchdog.*
   sudo cp ./watchdog.sh ./watchdog.py /etc/watchdog/
   ```
-  4. Copy ```watchdog.service``` to ```/etc/systemd/system/``` and reload systemd daemon then start and enable the service.
+  5. Copy ```watchdog.service``` to ```/etc/systemd/system/``` and reload systemd daemon then start and enable the service.
   ```
   sudo cp watchdog.service /etc/systemd/system/
   sudo systemctl daemon-reload
