@@ -4,7 +4,7 @@ def search_var(selected_project):
     while True:
         searched_string = input("Enter the var you are looking for: (Enter b to go back) ")
         if searched_string == 'b':
-            print('Going back to the main menu')
+            print('\nGoing back to the main menu')
             return None
         else:
             project_id = find_project(selected_project)

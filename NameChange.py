@@ -4,7 +4,7 @@ def name_change(selected_project):
     while True:
         old_gitlab_variable_key = input("Enter current the part you want to change: (Enter b to go back) ")
         if old_gitlab_variable_key == 'b':
-            print('Going back to the main menu: \n')
+            print('\nGoing back to the main menu')
             break
         else:
             new_gitlab_variable_key = input("Enter what you want to change it to: ")
