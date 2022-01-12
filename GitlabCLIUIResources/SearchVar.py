@@ -2,7 +2,7 @@ from GitlabCLIUIResources.GitlabSource import *
 
 def search_var(project_id):
     while True:
-        searched_string = input(colored("Enter the var you are looking for: (Enter b to go back) ",'yellow'))
+        searched_string = input(colored("\nEnter the var you are looking for: (Enter b to go back) ",'yellow'))
         if searched_string == 'b':
             print(colored('\nGoing back to the main menu','yellow'))
             return None

@@ -2,7 +2,7 @@ from GitlabCLIUIResources.GitlabSource import *
 
 def name_change(project_id):
     while True:
-        old_gitlab_variable_key = input("Enter current the part you want to change: (Enter b to go back) ")
+        old_gitlab_variable_key = input("\nEnter current the part you want to change: (Enter b to go back) ")
         if old_gitlab_variable_key == 'b':
             print(colored('\nGoing back to the main menu','yellow'))
             break

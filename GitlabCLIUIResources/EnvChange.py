@@ -2,7 +2,7 @@ from GitlabCLIUIResources.GitlabSource import *
 
 def env_change(project_id):
     while True:
-        old_gitlab_environment = input(colored("Enter current environment of variables: (Enter b to go back) ",'yellow'))
+        old_gitlab_environment = input(colored("\nEnter current environment of variables: (Enter b to go back) ",'yellow'))
         if old_gitlab_environment == 'b':
             print(colored("\nGoing back to the main menu.",'yellow'))
             break

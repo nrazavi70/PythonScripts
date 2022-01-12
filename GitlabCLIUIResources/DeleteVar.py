@@ -19,7 +19,7 @@ def delete_var(project_id):
                         delete_confirm = input(colored("This will delete the variable "+var_key+". Are you sure? (y/n) ",'yellow'))
                         if delete_confirm == 'y':
                             requests.delete(variables_url, headers={'PRIVATE-TOKEN':token})
-                            print(colored("Done. "+var_key+' : '+var_value+" has been deleted.",'green'))
+                            print(colored("Done. \nKey: "+var_key+'\nValue: '+var_value+"\nEnvironment: "+var_env+"\nhas been deleted.",'green'))
                             break
                         elif delete_confirm == 'n':
                             break
