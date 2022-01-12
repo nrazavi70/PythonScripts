@@ -1,5 +1,4 @@
-from GitlabSource import *
-from VarOps import var_ops
+from GitlabCLIUIResources.GitlabSource import *
 
 def env_change(project_id):
     while True:

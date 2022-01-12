@@ -1,4 +1,4 @@
-from GitlabSource import *
+from GitlabCLIUIResources.GitlabSource import *
 
 def name_change(project_id):
     while True:

@@ -1,11 +1,11 @@
-from GitlabSource import *
-from DeleteVar import delete_var
-from CreateVar import create_var
-from EnvChange import env_change
-from ListProjects import list_projects
-from NameChange import name_change
-from SearchVar import search_var
-from ListVars import list_vars
+from GitlabCLIUIResources.GitlabSource import *
+from GitlabCLIUIResources.DeleteVar import delete_var
+from GitlabCLIUIResources.CreateVar import create_var
+from GitlabCLIUIResources.EnvChange import env_change
+from GitlabCLIUIResources.ListProjects import list_projects
+from GitlabCLIUIResources.NameChange import name_change
+from GitlabCLIUIResources.SearchVar import search_var
+from GitlabCLIUIResources.ListVars import list_vars
 
 initial_choice = None
 selected_project = None

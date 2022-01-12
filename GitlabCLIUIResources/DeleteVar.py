@@ -1,5 +1,5 @@
-from GitlabSource import *
-from VarOps import var_ops
+from GitlabCLIUIResources.GitlabSource import *
+from GitlabCLIUIResources.VarOps import var_ops
 
 def delete_var(project_id):
     while True:

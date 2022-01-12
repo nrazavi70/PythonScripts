@@ -1,4 +1,4 @@
-from GitlabSource import *
+from GitlabCLIUIResources.GitlabSource import *
 
 def create_var(project_id):
     while True:

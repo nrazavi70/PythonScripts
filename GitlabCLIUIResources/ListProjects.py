@@ -1,4 +1,4 @@
-from GitlabSource import *
+from GitlabCLIUIResources.GitlabSource import *
 from tabulate import tabulate
 
 def list_projects():

@@ -1,4 +1,4 @@
-from GitlabSource import *
+from GitlabCLIUIResources.GitlabSource import *
 
 class var_ops():
     def key_to_id(project_id,selected_variable_key):
