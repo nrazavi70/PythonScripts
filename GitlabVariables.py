@@ -27,27 +27,21 @@ else:
                     project_id = find_project(selected_project)
                     if project_id is None:
                         continue
-                    else:
-                        
+                    else: 
                         while True:
                             if initial_choice is None:
-                                list_vars(project_id)
-                                print(colored("\nc     ",'yellow'),colored("Create a new variable",'blue'),colored("\
-                                               \ns     ",'yellow'),colored("Search for a variable.",'blue'),colored("\
-                                               \nd     ",'yellow'),colored("Delete a variable.",'blue'),colored("\
-                                               \nce    ",'yellow'),colored("Change variable environment in a project and add new variables with the new environment.",'blue'),colored("\
-                                               \ncn    ",'yellow'),colored("Change a part of a variable's name and add new variables with the new name.",'blue'),colored("\
-                                               \nb     ",'yellow'),colored("Select another project.",'blue'),colored('\
-                                               \nq     ','yellow'),colored("Exit",'blue'))
-                                initial_choice = input(colored("\n\nWhat do you want to do? ","yellow"))
-                                # initial_choice = input("\nc:     Create a new variable.\
-                                                        # \ns:     Search for a variable.\
-                                                        # \nd:     Delete a variable.\
-                                                        # \nce:    Change variable environment in a project and add new variables with the new environment.\
-                                                        # \ncn:    Change a part of a variable's name and add new variables with the new name.\
-                                                        # \nb:     Select another project.\
-                                                        # \nq:     Exit\
-                                                        # \n\nWhat do you want to do? "
+                                user_permitted = list_vars(project_id)
+                                if user_permitted:
+                                    print(colored("\nc     ",'yellow'),colored("Create a new variable",'blue'),colored("\
+                                                   \ns     ",'yellow'),colored("Search for a variable.",'blue'),colored("\
+                                                   \nd     ",'yellow'),colored("Delete a variable.",'blue'),colored("\
+                                                   \nce    ",'yellow'),colored("Change variable environment in a project and add new variables with the new environment.",'blue'),colored("\
+                                                   \ncn    ",'yellow'),colored("Change a part of a variable's name and add new variables with the new name.",'blue'),colored("\
+                                                   \nb     ",'yellow'),colored("Select another project.",'blue'),colored('\
+                                                   \nq     ','yellow'),colored("Exit",'blue'))
+                                    initial_choice = input(colored("\n\nWhat do you want to do? ","yellow"))
+                                else:
+                                    break
                             elif initial_choice == 'b':
                                 initial_choice = None
                                 selected_project = None
