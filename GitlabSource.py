@@ -1,7 +1,8 @@
 import requests
 import json
+from termcolor import colored
 
-token = input("Enter token with api_read and api permission: ")
+token = input(colored("Enter token with api_read and api permission: ",'yellow'))
 projects_url = "https://gitlab.ernyka.com/api/v4/projects"
 projects_page_response = requests.get(projects_url, headers={'PRIVATE-TOKEN':token})
 projects = json.loads(projects_page_response.text)
@@ -13,7 +14,7 @@ def find_project(selected_project):
             break
         else:
             project_id = None
-    if selected_project is None:
-        print('No such project exists.')
-    else:
-        return project_id
+    if project_id is None:
+        print(colored('No such project exists.','red'))
+    return project_id
+    
