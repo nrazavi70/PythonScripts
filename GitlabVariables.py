@@ -1,3 +1,4 @@
+import imp
 from GitlabCLIUIResources.GitlabSource import *
 from GitlabCLIUIResources.DeleteVar import delete_var
 from GitlabCLIUIResources.CreateVar import create_var
@@ -6,6 +7,7 @@ from GitlabCLIUIResources.ListProjects import list_projects
 from GitlabCLIUIResources.NameChange import name_change
 from GitlabCLIUIResources.SearchVar import search_var
 from GitlabCLIUIResources.ListVars import list_vars
+from GitlabCLIUIResources.CreateVarwithFile import create_var_with_file
 
 initial_choice = None
 selected_project = None
@@ -33,6 +35,7 @@ else:
                                 user_permitted = list_vars(project_id)
                                 if user_permitted:
                                     print(colored("\nc     ",'yellow'),colored("Create a new variable",'blue'),colored("\
+                                                   \ncf    ",'yellow'),colored("Create a new variable from file",'blue'),colored("\
                                                    \ns     ",'yellow'),colored("Search for a variable.",'blue'),colored("\
                                                    \nd     ",'yellow'),colored("Delete a variable.",'blue'),colored("\
                                                    \nce    ",'yellow'),colored("Change variable environment in a project and add new variables with the new environment.",'blue'),colored("\
@@ -54,6 +57,8 @@ else:
                                 initial_choice = name_change(project_id)
                             elif initial_choice == 'c':
                                 initial_choice = create_var(project_id)
+                            elif initial_choice == 'cf':
+                                initial_choice = create_var_with_file(project_id)
                             elif initial_choice == 's':
                                 initial_choice = search_var(project_id)
                             elif initial_choice == 'q':
