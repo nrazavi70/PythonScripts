@@ -15,7 +15,7 @@ def delete_var(project_id):
                     else:
                         var_key = var_ops.id_to_key(project_id,var_id)
                         var_value = var_ops.id_to_value(project_id,var_id)
-                        variables_url = "https://gitlab.ernyka.com/api/v4/projects/"+str(project_id)+"/variables/"+var_key+"?filter[environment_scope]="+var_env
+                        variables_url = gitlab_url+"/api/v4/projects/"+str(project_id)+"/variables/"+var_key+"?filter[environment_scope]="+var_env
                         delete_confirm = input(colored("This will delete the variable "+var_key+". Are you sure? (y/n) ",'yellow'))
                         if delete_confirm == 'y':
                             requests.delete(variables_url, headers={'PRIVATE-TOKEN':token})

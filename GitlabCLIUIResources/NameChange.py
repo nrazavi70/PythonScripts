@@ -8,7 +8,7 @@ def name_change(project_id):
             break
         else:
             new_gitlab_variable_key = input(colored("Enter what you want to change it to: ",'yellow'))
-            variables_url = "https://gitlab.ernyka.com/api/v4/projects/"+str(project_id)+"/variables?per_page=100"
+            variables_url = gitlab_url+"/api/v4/projects/"+str(project_id)+"/variables?per_page=100"
             variables_page_response = requests.get(variables_url, headers={'PRIVATE-TOKEN':token})
             variables = json.loads(variables_page_response.text)
             for i in range(len(variables)):

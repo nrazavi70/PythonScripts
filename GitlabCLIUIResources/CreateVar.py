@@ -2,7 +2,7 @@ from GitlabCLIUIResources.GitlabSource import *
 
 def create_var(project_id):
     while True:
-            variables_url = "https://gitlab.ernyka.com/api/v4/projects/"+str(project_id)+"/variables?per_page=100"
+            variables_url = gitlab_url+"/api/v4/projects/"+str(project_id)+"/variables?per_page=100"
             var_key = input((colored("\nEnter variable key: (Enter b to go back.) ",'yellow')))
             if var_key == 'b':
                 break

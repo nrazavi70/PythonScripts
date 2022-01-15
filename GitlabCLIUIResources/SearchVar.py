@@ -7,7 +7,7 @@ def search_var(project_id):
             print(colored('\nGoing back to the main menu','yellow'))
             return None
         else:
-            variables_url = "https://gitlab.ernyka.com/api/v4/projects/"+str(project_id)+"/variables?per_page=100"
+            variables_url = gitlab_url+"/api/v4/projects/"+str(project_id)+"/variables?per_page=100"
             variables_page_response = requests.get(variables_url, headers={'PRIVATE-TOKEN':token})
             variables = json.loads(variables_page_response.text)
             for i in range(len(variables)):

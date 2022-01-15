@@ -2,8 +2,10 @@ import requests
 import json
 from termcolor import colored
 
+gitlab_url = "https://gitlab.ernyka.com"
+
 token = input(colored("Enter token with api_read and api permission: ",'yellow'))
-projects_url = "https://gitlab.ernyka.com/api/v4/projects"
+projects_url = gitlab_url+"/api/v4/projects"
 projects_page_response = requests.get(projects_url, headers={'PRIVATE-TOKEN':token})
 projects = json.loads(projects_page_response.text)
 

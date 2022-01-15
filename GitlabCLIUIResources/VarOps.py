@@ -2,7 +2,7 @@ from GitlabCLIUIResources.GitlabSource import *
 
 class var_ops():
     def key_to_id(project_id,selected_variable_key):
-        variables_url = "https://gitlab.ernyka.com/api/v4/projects/"+str(project_id)+"/variables?per_page=100"
+        variables_url = gitlab_url+"/api/v4/projects/"+str(project_id)+"/variables?per_page=100"
         variables_page_response = requests.get(variables_url, headers={'PRIVATE-TOKEN':token})
         variables = json.loads(variables_page_response.text)
         for i in range(len(variables)):
@@ -17,7 +17,7 @@ class var_ops():
             return variable_id
 
     def id_to_key(project_id,selected_variable_id):
-        variables_url = "https://gitlab.ernyka.com/api/v4/projects/"+str(project_id)+"/variables?per_page=100"
+        variables_url = gitlab_url+"/api/v4/projects/"+str(project_id)+"/variables?per_page=100"
         variables_page_response = requests.get(variables_url, headers={'PRIVATE-TOKEN':token})
         variables = json.loads(variables_page_response.text)
         for i in range(len(variables)):
@@ -32,7 +32,7 @@ class var_ops():
             return variable_key
 
     def id_to_value(project_id,selected_variable_id):
-        variables_url = "https://gitlab.ernyka.com/api/v4/projects/"+str(project_id)+"/variables?per_page=100"
+        variables_url = gitlab_url+"/api/v4/projects/"+str(project_id)+"/variables?per_page=100"
         variables_page_response = requests.get(variables_url, headers={'PRIVATE-TOKEN':token})
         variables = json.loads(variables_page_response.text)
         for i in range(len(variables)):
