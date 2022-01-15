@@ -2,6 +2,7 @@ import requests
 import json
 import datetime
 import os
+from time import sleep
 
 #Defining required parameters such as token, target record, target URL and etc.
 token=str(os.environ.get('WATCHDOG_TOKEN'))
@@ -86,16 +87,29 @@ target_record_ip=findRecordIP(target_record_name)
 # Defining variables to check the target website and applying changes in case of failure.
 dns_record_change_url="https://napi.arvancloud.com/cdn/4.0/domains/"+domain_name+"/dns-records/"+target_record_id
 target_response=requests.get(target_url)
+
 if target_response.status_code == 200 and target_record_ip == secondary_server_ip:
-  requests.put(dns_record_change_url, headers={'Authorization':token, 'Content-Type':'application/json'}, data=dns_record_change_to_primary_body)
-  print(str(datetime.datetime.now())+" : The active web server for "+target_url+" is now redirected to the primary server at "+primary_server_ip+" .")
+  failures = 0
+  while target_response.status_code == 200:
+    failures += 1
+    if failures == 3:
+      requests.put(dns_record_change_url, headers={'Authorization':token, 'Content-Type':'application/json'}, data=dns_record_change_to_primary_body)
+      print(str(datetime.datetime.now())+" : The active web server for "+target_url+" is now redirected to the primary server at "+primary_server_ip+" .")
+      break
+    sleep(30)
 
 elif target_response.status_code == 200 and target_record_ip == primary_server_ip:
   print(str(datetime.datetime.now())+" : The primary server is up at "+primary_server_ip+" .")
 
 elif target_response.status_code != 200 and target_record_ip == primary_server_ip:
-  requests.put(dns_record_change_url, headers={'Authorization':token, 'Content-Type':'application/json'}, data=dns_record_change_to_secondary_body)
-  print(str(datetime.datetime.now())+" : The active web server for "+target_url+" is now redirected to the secondary server at "+secondary_server_ip+" .")
+  failures = 0
+  while target_response.status_code != 200:
+    failures += 1
+    if failures == 3:
+      requests.put(dns_record_change_url, headers={'Authorization':token, 'Content-Type':'application/json'}, data=dns_record_change_to_secondary_body)
+      print(str(datetime.datetime.now())+" : The active web server for "+target_url+" is now redirected to the secondary server at "+secondary_server_ip+" .")
+      break
+    sleep(30)
 
 else:
   print(str(str(datetime.datetime.now()))+" : Check servers' statuses!")

@@ -7,7 +7,7 @@ export SECONDARY_SERVER_IP=
 
 while (true)
 do
-        python3.8 /etc/watchdog/watchdog.py
+        python3 /etc/watchdog/watchdog.py
         echo ---------------------------
         sleep 300
 done
