@@ -2,7 +2,7 @@ import requests
 import json
 from termcolor import colored
 
-gitlab_url = "https://gitlab.ernyka.com"
+gitlab_url = input(colored("Enter your gitlab url: ",'yellow'))
 
 token = input(colored("Enter token with api_read and api permission: ",'yellow'))
 projects_url = gitlab_url+"/api/v4/projects"
