@@ -19,7 +19,9 @@ def delete_var(project_id):
                             break
                         else:
                             var_key_list.append(var_key_object['key'])
-                            delete_confirm = input(colored("This will delete the variable . Are you sure? (y/n) ",'yellow'))
+                if var_key_list == []:
+                    break
+                delete_confirm = input(colored("This will delete the variable . Are you sure? (y/n) ",'yellow'))
                 for var_key in var_key_list:
                     variables_url = gitlab_url+"/api/v4/projects/"+str(project_id)+"/variables/"+var_key+"?filter[environment_scope]="+var_env
                     var_id = var_ops.key_to_id(project_id,var_key)
