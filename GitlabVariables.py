@@ -1,4 +1,3 @@
-import imp
 from GitlabCLIUIResources.GitlabSource import *
 from GitlabCLIUIResources.DeleteVar import delete_var
 from GitlabCLIUIResources.CreateVar import create_var
