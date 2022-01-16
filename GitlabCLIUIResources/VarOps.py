@@ -13,6 +13,7 @@ class var_ops():
                 variable_id = None
         if variable_id is None:
             print(colored('No such variable exists','red'))
+            return None
         else:
             return variable_id
 
